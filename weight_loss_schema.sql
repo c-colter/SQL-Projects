@@ -7,7 +7,7 @@ CREATE TABLE initial_weight_conditions (
 
 INSERT INTO initial_weight_conditions VALUES (225.0);
 
-CREATE VIEW weight_loss_by_lbs_per_week AS (
+CREATE VIEW weight_per_week AS (
 	WITH RECURSIVE weight_loss AS (
 		SELECT 1 AS week, weight AS half_per_wk, weight AS one_per_wk, weight AS one_and_half_per_wk, weight AS two_per_wk
 		FROM initial_weight_conditions
