@@ -9,7 +9,7 @@ multiple_donations AS (
 	GROUP BY supporter_id
 	HAVING COUNT(*) >= 2
 )
-SELECT first_name || ' ' || last_name FROM supporter
+SELECT first_name || ' ' || last_name AS name FROM supporter
 WHERE id IN (
 	SELECT supporter_id FROM over_200 INTERSECT SELECT supporter_id FROM multiple_donations
 );
