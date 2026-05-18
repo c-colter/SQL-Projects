@@ -7,7 +7,7 @@ WITH over_200 AS (
 multiple_donations AS (
 	SELECT supporter_id FROM donation
 	GROUP BY supporter_id
-	HAVING COUNT(*) > 2
+	HAVING COUNT(*) >= 2
 )
 SELECT first_name || ' ' || last_name FROM supporter
 WHERE id IN (
